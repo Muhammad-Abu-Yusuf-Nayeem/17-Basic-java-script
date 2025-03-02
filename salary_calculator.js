@@ -1,14 +1,14 @@
 // Salary Calculator Program
 
 // Input: Basic Salary
-let basicSalary = 65000; // Example input
+let basicSalary = 60000; // Example input
 
 // Calculate Bonus (10% if salary > 50,000, otherwise 5%)
 let bonus = basicSalary > 50000 ? basicSalary * 0.1 : basicSalary * 0.05;
 console.log("Bonus Amount:", bonus);
 
 // Calculate Deductions: Tax (8% of salary + bonus) and Health Insurance (2000)
-let tax = (basicSalary + bonus) * 0.06;
+let tax = (basicSalary + bonus) * 0.08;
 let healthInsurance = 2000;
 let totalDeductions = tax + healthInsurance;
 console.log("Total Deductions:", totalDeductions);
