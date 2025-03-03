@@ -121,3 +121,45 @@ function findMinMax(arr) {
 let numbers = [10, 3, 55, 23, 78, 1, 99, 45];
 let result = findMinMax(numbers);
 console.log(`Minimum: ${result.min}, Maximum: ${result.max}`);
+
+
+// 1. Reverse a 2-digit number
+function reverseTwoDigitNumber(num) {
+    if (num < 10 || num > 99) {
+        return "Please enter a two-digit number";
+    }
+    let reversed = (num % 10) * 10 + Math.floor(num / 10);
+    return reversed;
+}
+
+console.log(`Reversed: ${reverseTwoDigitNumber(42)}`); // 24
+
+// 2. Swap two numbers (with a third variable)
+function swapWithTemp(a, b) {
+    let temp = a;
+    a = b;
+    b = temp;
+    return { a, b };
+}
+
+// 2. Swap two numbers (without a third variable)
+function swapWithoutTemp(a, b) {
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    return { a, b };
+}
+
+let swappedWithTemp = swapWithTemp(5, 10);
+console.log(`Swapped with temp: a = ${swappedWithTemp.a}, b = ${swappedWithTemp.b}`);
+
+let swappedWithoutTemp = swapWithoutTemp(5, 10);
+console.log(`Swapped without temp: a = ${swappedWithoutTemp.a}, b = ${swappedWithoutTemp.b}`);
+
+// 3. Convert uppercase to lowercase
+function toLowerCase(ch) {
+    return ch.toLowerCase();
+}
+
+console.log(`Lowercase of 'A': ${toLowerCase('A')}`); // a
+console.log(`Lowercase of 'Z': ${toLowerCase('Z')}`); // z
