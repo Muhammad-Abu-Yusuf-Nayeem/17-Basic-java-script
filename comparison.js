@@ -252,25 +252,25 @@ Strict Inequality (!==) does not allow type conversion.
 
 */
 
-/*
+/***************************************************************************
 1. Check if a Number is Positive, Negative, or Zero (if-else)
 Problem:
 Write a function that takes a number and checks whether it is positive, negative, or zero.
 */
 function checkNumber(num) {
-    if (num > 0) {
-        console.log("The number is positive");
-    } else if (num < 0) {
-        console.log("The number is negative");
-    } else {
-        console.log("The number is zero");
-    }
+  if (num > 0) {
+    console.log("The number is positive");
+  } else if (num < 0) {
+    console.log("The number is negative");
+  } else {
+    console.log("The number is zero");
+  }
 }
 
 // Test cases
-checkNumber(10);  // "The number is positive"
-checkNumber(-5);  // "The number is negative"
-checkNumber(0);   // "The number is zero"
+checkNumber(10); // "The number is positive"
+checkNumber(-5); // "The number is negative"
+checkNumber(0); // "The number is zero"
 
 /*
 2. Grade Calculator (else-if ladder)
@@ -284,17 +284,17 @@ Write a function that takes a student’s marks and assigns a grade based on the
 Below 60: "F"
 */
 function calculateGrade(marks) {
-    if (marks >= 90) {
-        console.log("Grade: A");
-    } else if (marks >= 80) {
-        console.log("Grade: B");
-    } else if (marks >= 70) {
-        console.log("Grade: C");
-    } else if (marks >= 60) {
-        console.log("Grade: D");
-    } else {
-        console.log("Grade: F");
-    }
+  if (marks >= 90) {
+    console.log("Grade: A");
+  } else if (marks >= 80) {
+    console.log("Grade: B");
+  } else if (marks >= 70) {
+    console.log("Grade: C");
+  } else if (marks >= 60) {
+    console.log("Grade: D");
+  } else {
+    console.log("Grade: F");
+  }
 }
 
 // Test cases
@@ -304,31 +304,27 @@ calculateGrade(72); // "Grade: C"
 calculateGrade(65); // "Grade: D"
 calculateGrade(50); // "Grade: F"
 
-
-
 /*
 3. Check Even or Odd and Divisibility by 5 (nested if-else)
 Problem:
 Write a function that checks if a number is even or odd, and if it's even, check whether it’s also divisible by 5.
 */
 function checkEvenOddDivisible(num) {
-    if (num % 2 === 0) {
-        if (num % 5 === 0) {
-            console.log("The number is even and divisible by 5");
-        } else {
-            console.log("The number is even but not divisible by 5");
-        }
+  if (num % 2 === 0) {
+    if (num % 5 === 0) {
+      console.log("The number is even and divisible by 5");
     } else {
-        console.log("The number is odd");
+      console.log("The number is even but not divisible by 5");
     }
+  } else {
+    console.log("The number is odd");
+  }
 }
 
 // Test cases
 checkEvenOddDivisible(10); // "The number is even and divisible by 5"
-checkEvenOddDivisible(8);  // "The number is even but not divisible by 5"
-checkEvenOddDivisible(7);  // "The number is odd"
-
-
+checkEvenOddDivisible(8); // "The number is even but not divisible by 5"
+checkEvenOddDivisible(7); // "The number is odd"
 
 /*
 4. Check Voting Eligibility (if-else)
@@ -339,18 +335,16 @@ A person can vote if they are 18 or older.
 If they are under 18, print how many years are left until they can vote.
 */
 function checkVotingEligibility(age) {
-    if (age >= 18) {
-        console.log("You are eligible to vote");
-    } else {
-        console.log("You can vote after " + (18 - age) + " years");
-    }
+  if (age >= 18) {
+    console.log("You are eligible to vote");
+  } else {
+    console.log("You can vote after " + (18 - age) + " years");
+  }
 }
 
 // Test cases
 checkVotingEligibility(20); // "You are eligible to vote"
 checkVotingEligibility(15); // "You can vote after 3 years"
-
-
 
 /*
 5. Check Admission Eligibility (else-if ladder + nested if-else)
@@ -362,25 +356,24 @@ If marks are between 50-59, they need to pass an additional test.
 If marks are below 50, they are not eligible.
 */
 function checkAdmission(marks, passedTest) {
-    if (marks >= 60) {
-        console.log("You are eligible for admission");
-    } else if (marks >= 50) {
-        if (passedTest) {
-            console.log("You are eligible for admission after passing the test");
-        } else {
-            console.log("You need to pass the test to be eligible");
-        }
+  if (marks >= 60) {
+    console.log("You are eligible for admission");
+  } else if (marks >= 50) {
+    if (passedTest) {
+      console.log("You are eligible for admission after passing the test");
     } else {
-        console.log("You are not eligible for admission");
+      console.log("You need to pass the test to be eligible");
     }
+  } else {
+    console.log("You are not eligible for admission");
+  }
 }
 
 // Test cases
 checkAdmission(70, false); // "You are eligible for admission"
-checkAdmission(55, true);  // "You are eligible for admission after passing the test"
+checkAdmission(55, true); // "You are eligible for admission after passing the test"
 checkAdmission(55, false); // "You need to pass the test to be eligible"
 checkAdmission(40, false); // "You are not eligible for admission"
-
 
 /*
 Summary of Concepts Used:
@@ -389,13 +382,9 @@ Summary of Concepts Used:
 ✅ nested if-else → Used when conditions depend on a previous condition.
 */
 
-
-
-/*
+/*******************************************************************************************
  multiple conditional logical operators (&&, ||, !) in if statements along with solutions.
 */
-
-
 
 /*
 1. Check If a Person Can Donate Blood (&& Operator)
@@ -404,11 +393,11 @@ A person can donate blood if they are at least 18 years old and weigh at least 5
 Write a function that checks if a person is eligible to donate blood.
 */
 function canDonateBlood(age, weight) {
-    if (age >= 18 && weight >= 50) {
-        console.log("You are eligible to donate blood");
-    } else {
-        console.log("You are not eligible to donate blood");
-    }
+  if (age >= 18 && weight >= 50) {
+    console.log("You are eligible to donate blood");
+  } else {
+    console.log("You are not eligible to donate blood");
+  }
 }
 
 // Test cases
@@ -416,27 +405,23 @@ canDonateBlood(20, 55); // "You are eligible to donate blood"
 canDonateBlood(16, 60); // "You are not eligible to donate blood"
 canDonateBlood(22, 45); // "You are not eligible to donate blood"
 
-
-
 /*
 2. Check If a Number is Within a Range (&& Operator)
 Problem:
 Write a function that checks if a number is between 10 and 50 (inclusive).
 */
 function checkInRange(num) {
-    if (num >= 10 && num <= 50) {
-        console.log("The number is within the range 10-50");
-    } else {
-        console.log("The number is outside the range");
-    }
+  if (num >= 10 && num <= 50) {
+    console.log("The number is within the range 10-50");
+  } else {
+    console.log("The number is outside the range");
+  }
 }
 
 // Test cases
 checkInRange(25); // "The number is within the range 10-50"
-checkInRange(9);  // "The number is outside the range"
+checkInRange(9); // "The number is outside the range"
 checkInRange(50); // "The number is within the range 10-50"
-
-
 
 /*
 3. Check If a Year is a Leap Year (&& and || Operator)
@@ -448,11 +433,11 @@ It is divisible by 4 but not divisible by 100
 Write a function to check if a given year is a leap year.
 */
 function isLeapYear(year) {
-    if ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)) {
-        console.log(year + " is a leap year");
-    } else {
-        console.log(year + " is not a leap year");
-    }
+  if (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {
+    console.log(year + " is a leap year");
+  } else {
+    console.log(year + " is not a leap year");
+  }
 }
 
 // Test cases
@@ -460,8 +445,6 @@ isLeapYear(2024); // "2024 is a leap year"
 isLeapYear(1900); // "1900 is not a leap year"
 isLeapYear(2000); // "2000 is a leap year"
 isLeapYear(2023); // "2023 is not a leap year"
-
-
 
 /*
 4. Check If a User Can Access a Page (|| Operator)
@@ -473,19 +456,17 @@ An admin
 Write a function that checks if a user has access.
 */
 function canAccessPage(isSubscriber, isAdmin) {
-    if (isSubscriber || isAdmin) {
-        console.log("You have access to the premium page");
-    } else {
-        console.log("You do not have access");
-    }
+  if (isSubscriber || isAdmin) {
+    console.log("You have access to the premium page");
+  } else {
+    console.log("You do not have access");
+  }
 }
 
 // Test cases
 canAccessPage(true, false); // "You have access to the premium page"
 canAccessPage(false, true); // "You have access to the premium page"
 canAccessPage(false, false); // "You do not have access"
-
-
 
 /*
 5. Check If a Number is Valid (! Operator)
@@ -495,19 +476,234 @@ If the number is invalid, print "Invalid number".
 */
 
 function isValidNumber(num) {
-    if (!num) {
-        console.log("Invalid number");
-    } else {
-        console.log("Valid number: " + num);
-    }
+  if (!num) {
+    console.log("Invalid number");
+  } else {
+    console.log("Valid number: " + num);
+  }
 }
 
 // Test cases
-isValidNumber(10);   // "Valid number: 10"
-isValidNumber(0);    // "Invalid number"
+isValidNumber(10); // "Valid number: 10"
+isValidNumber(0); // "Invalid number"
 isValidNumber(null); // "Invalid number"
 isValidNumber(undefined); // "Invalid number"
 
+/**********************************************************************************************
+The ternary operator (? :) is a shorthand for if-else statements.
+Here are 5 practice problems using the ternary operator along with solutions.
 
 
+✅ Ternary Operator Syntax:
+(condition) ? "If True" : "If False";
 
+✅ Nested Ternary Operators:
+(condition1) ? "If True" : (condition2) ? "Else If True" : "Else Case";
+
+*/
+
+/*
+1. Check if a Number is Even or Odd
+Problem:
+Write a function that checks if a number is even or odd using the ternary operator.
+*/
+function checkEvenOdd(num) {
+  let result = num % 2 === 0 ? "Even" : "Odd";
+  console.log(result);
+}
+
+// Test cases
+checkEvenOdd(10); // "Even"
+checkEvenOdd(7); // "Odd"
+
+/*
+2. Find the Greater of Two Numbers
+Problem:
+Write a function that takes two numbers and returns the greater number.
+*/
+function findGreater(a, b) {
+  let greater = a > b ? a : b;
+  console.log("Greater number is: " + greater);
+}
+
+// Test cases
+findGreater(10, 20); // "Greater number is: 20"
+findGreater(50, 25); // "Greater number is: 50"
+
+/*
+3. Check If a Person is Eligible to Vote
+Problem:
+A person can vote if they are 18 or older.
+Write a function that checks if the person can vote.
+*/
+function canVote(age) {
+  let result = age >= 18 ? "Eligible to vote" : "Not eligible to vote";
+  console.log(result);
+}
+
+// Test cases
+canVote(20); // "Eligible to vote"
+canVote(16); // "Not eligible to vote"
+
+/*
+4. Check If a Number is Positive, Negative, or Zero
+Problem:
+Write a function that checks whether a number is positive, negative, or zero.
+*/
+function checkNumber(num) {
+  let result = num > 0 ? "Positive" : num < 0 ? "Negative" : "Zero";
+  console.log(result);
+}
+
+// Test cases
+checkNumber(10); // "Positive"
+checkNumber(-5); // "Negative"
+checkNumber(0); // "Zero"
+
+/*
+5. Check If a Year is a Leap Year
+Problem:
+A year is a leap year if:
+
+It is divisible by 400, OR
+It is divisible by 4 but not by 100.
+*/
+function isLeapYear(year) {
+  let result =
+    year % 400 === 0
+      ? "Leap Year"
+      : year % 4 === 0 && year % 100 !== 0
+      ? "Leap Year"
+      : "Not a Leap Year";
+  console.log(result);
+}
+
+// Test cases
+isLeapYear(2024); // "Leap Year"
+isLeapYear(1900); // "Not a Leap Year"
+isLeapYear(2000); // "Leap Year"
+isLeapYear(2023); // "Not a Leap Year"
+
+/********************************************************************************
+Logical NOT (!) in JavaScript
+The logical NOT (!) operator is used to invert the truthiness of a value.
+
+If the value is truthy, ! makes it false.
+If the value is falsy, ! makes it true.
+*/
+
+/*
+Use Cases of Logical NOT (!)
+1. Converting Any Value to Boolean (!!)
+🔹 Use Case: Ensuring a value is true or false.
+🔹 Why? In JavaScript, some values are truthy (like numbers, strings) and some are falsy (0, "", null, undefined, NaN).
+🔹 Solution: Use !! to convert any value into a Boolean (true or false).
+*/
+console.log(!!"hello"); // true (Non-empty string is truthy)
+console.log(!!0); // false (0 is falsy)
+console.log(!!null); // false (null is falsy)
+console.log(!!""); // false (Empty string is falsy)
+
+/*
+2. Checking If a Variable is Undefined or Null
+🔹 Use Case: If a variable is undefined or null, execute fallback logic.
+
+✅ Use case: Preventing actions when an input is empty.
+*/
+let user;
+if (!user) {
+  console.log("User is not defined");
+} else {
+  console.log("User exists");
+}
+
+/*
+3. Preventing Code Execution for Falsy Values
+🔹 Use Case: If a value is falsy (0, null, undefined, ""), prevent execution.
+
+✅ Use case: Preventing actions when an input is empty.
+*/
+let input = "";
+
+if (!input) {
+  console.log("No input provided");
+} else {
+  console.log("Processing input...");
+}
+
+/*
+4. Toggling Boolean Values
+🔹 Use Case: Flip a boolean value (like switching between true and false).
+
+✅ Use case: Toggling dark mode, switch buttons, or UI elements.
+*/
+
+let isDarkMode = false;
+isDarkMode = !isDarkMode;
+console.log(isDarkMode); // true
+
+/*
+5. Checking If an Array or String is Empty
+🔹 Use Case: Ensure an array or string contains values before executing logic.
+
+✅ Use case: Prevent processing empty arrays or strings.
+*/
+let arr = [];
+if (!arr.length) {
+  console.log("Array is empty");
+}
+
+let str = "";
+if (!str.length) {
+  console.log("String is empty");
+}
+
+/*
+6. Preventing Execution If an Object Property is Missing
+🔹 Use Case: Check if an object property exists before using it.
+
+6. Preventing Execution If an Object Property is Missing
+🔹 Use Case: Check if an object property exists before using it.
+*/
+let user = { name: "Alice" };
+if (!user.age) {
+  console.log("Age not provided");
+}
+
+/*
+Summary
+! flips true → false and false → true.
+!! converts a value to a strict boolean.
+Common Use Cases: ✅ Checking for null, undefined, empty strings, or missing values.
+✅ Toggling booleans (e.g., dark mode switch).
+✅ Ensuring an array or string is not empty.
+✅ Preventing execution if an object property is missing.
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
+
+/*
+
+*/
