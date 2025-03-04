@@ -250,16 +250,264 @@ Strict Equality (===) does not allow type conversion (5 === "5" is false).
 Loose Inequality (!=) also allows type conversion.
 Strict Inequality (!==) does not allow type conversion.
 
- */
+*/
 
 /*
- */
+1. Check if a Number is Positive, Negative, or Zero (if-else)
+Problem:
+Write a function that takes a number and checks whether it is positive, negative, or zero.
+*/
+function checkNumber(num) {
+    if (num > 0) {
+        console.log("The number is positive");
+    } else if (num < 0) {
+        console.log("The number is negative");
+    } else {
+        console.log("The number is zero");
+    }
+}
+
+// Test cases
+checkNumber(10);  // "The number is positive"
+checkNumber(-5);  // "The number is negative"
+checkNumber(0);   // "The number is zero"
 
 /*
- */
+2. Grade Calculator (else-if ladder)
+Problem:
+Write a function that takes a student’s marks and assigns a grade based on the following conditions:
+
+90 - 100: "A"
+80 - 89: "B"
+70 - 79: "C"
+60 - 69: "D"
+Below 60: "F"
+*/
+function calculateGrade(marks) {
+    if (marks >= 90) {
+        console.log("Grade: A");
+    } else if (marks >= 80) {
+        console.log("Grade: B");
+    } else if (marks >= 70) {
+        console.log("Grade: C");
+    } else if (marks >= 60) {
+        console.log("Grade: D");
+    } else {
+        console.log("Grade: F");
+    }
+}
+
+// Test cases
+calculateGrade(95); // "Grade: A"
+calculateGrade(85); // "Grade: B"
+calculateGrade(72); // "Grade: C"
+calculateGrade(65); // "Grade: D"
+calculateGrade(50); // "Grade: F"
+
+
 
 /*
- */
+3. Check Even or Odd and Divisibility by 5 (nested if-else)
+Problem:
+Write a function that checks if a number is even or odd, and if it's even, check whether it’s also divisible by 5.
+*/
+function checkEvenOddDivisible(num) {
+    if (num % 2 === 0) {
+        if (num % 5 === 0) {
+            console.log("The number is even and divisible by 5");
+        } else {
+            console.log("The number is even but not divisible by 5");
+        }
+    } else {
+        console.log("The number is odd");
+    }
+}
+
+// Test cases
+checkEvenOddDivisible(10); // "The number is even and divisible by 5"
+checkEvenOddDivisible(8);  // "The number is even but not divisible by 5"
+checkEvenOddDivisible(7);  // "The number is odd"
+
+
 
 /*
- */
+4. Check Voting Eligibility (if-else)
+Problem:
+Write a function that checks if a person is eligible to vote.
+
+A person can vote if they are 18 or older.
+If they are under 18, print how many years are left until they can vote.
+*/
+function checkVotingEligibility(age) {
+    if (age >= 18) {
+        console.log("You are eligible to vote");
+    } else {
+        console.log("You can vote after " + (18 - age) + " years");
+    }
+}
+
+// Test cases
+checkVotingEligibility(20); // "You are eligible to vote"
+checkVotingEligibility(15); // "You can vote after 3 years"
+
+
+
+/*
+5. Check Admission Eligibility (else-if ladder + nested if-else)
+Problem:
+A student is eligible for admission if:
+
+Their marks are 60 or above.
+If marks are between 50-59, they need to pass an additional test.
+If marks are below 50, they are not eligible.
+*/
+function checkAdmission(marks, passedTest) {
+    if (marks >= 60) {
+        console.log("You are eligible for admission");
+    } else if (marks >= 50) {
+        if (passedTest) {
+            console.log("You are eligible for admission after passing the test");
+        } else {
+            console.log("You need to pass the test to be eligible");
+        }
+    } else {
+        console.log("You are not eligible for admission");
+    }
+}
+
+// Test cases
+checkAdmission(70, false); // "You are eligible for admission"
+checkAdmission(55, true);  // "You are eligible for admission after passing the test"
+checkAdmission(55, false); // "You need to pass the test to be eligible"
+checkAdmission(40, false); // "You are not eligible for admission"
+
+
+/*
+Summary of Concepts Used:
+✅ if-else → Used in simple decision-making situations.
+✅ else-if ladder → Used when multiple conditions need to be checked sequentially.
+✅ nested if-else → Used when conditions depend on a previous condition.
+*/
+
+
+
+/*
+ multiple conditional logical operators (&&, ||, !) in if statements along with solutions.
+*/
+
+
+
+/*
+1. Check If a Person Can Donate Blood (&& Operator)
+Problem:
+A person can donate blood if they are at least 18 years old and weigh at least 50 kg.
+Write a function that checks if a person is eligible to donate blood.
+*/
+function canDonateBlood(age, weight) {
+    if (age >= 18 && weight >= 50) {
+        console.log("You are eligible to donate blood");
+    } else {
+        console.log("You are not eligible to donate blood");
+    }
+}
+
+// Test cases
+canDonateBlood(20, 55); // "You are eligible to donate blood"
+canDonateBlood(16, 60); // "You are not eligible to donate blood"
+canDonateBlood(22, 45); // "You are not eligible to donate blood"
+
+
+
+/*
+2. Check If a Number is Within a Range (&& Operator)
+Problem:
+Write a function that checks if a number is between 10 and 50 (inclusive).
+*/
+function checkInRange(num) {
+    if (num >= 10 && num <= 50) {
+        console.log("The number is within the range 10-50");
+    } else {
+        console.log("The number is outside the range");
+    }
+}
+
+// Test cases
+checkInRange(25); // "The number is within the range 10-50"
+checkInRange(9);  // "The number is outside the range"
+checkInRange(50); // "The number is within the range 10-50"
+
+
+
+/*
+3. Check If a Year is a Leap Year (&& and || Operator)
+Problem:
+A year is a leap year if:
+
+It is divisible by 400 or
+It is divisible by 4 but not divisible by 100
+Write a function to check if a given year is a leap year.
+*/
+function isLeapYear(year) {
+    if ((year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0)) {
+        console.log(year + " is a leap year");
+    } else {
+        console.log(year + " is not a leap year");
+    }
+}
+
+// Test cases
+isLeapYear(2024); // "2024 is a leap year"
+isLeapYear(1900); // "1900 is not a leap year"
+isLeapYear(2000); // "2000 is a leap year"
+isLeapYear(2023); // "2023 is not a leap year"
+
+
+
+/*
+4. Check If a User Can Access a Page (|| Operator)
+Problem:
+A user can access a premium page if they are:
+
+A subscriber OR
+An admin
+Write a function that checks if a user has access.
+*/
+function canAccessPage(isSubscriber, isAdmin) {
+    if (isSubscriber || isAdmin) {
+        console.log("You have access to the premium page");
+    } else {
+        console.log("You do not have access");
+    }
+}
+
+// Test cases
+canAccessPage(true, false); // "You have access to the premium page"
+canAccessPage(false, true); // "You have access to the premium page"
+canAccessPage(false, false); // "You do not have access"
+
+
+
+/*
+5. Check If a Number is Valid (! Operator)
+Problem:
+A function should check if a given number is valid (not null, not undefined, and not zero).
+If the number is invalid, print "Invalid number".
+*/
+
+function isValidNumber(num) {
+    if (!num) {
+        console.log("Invalid number");
+    } else {
+        console.log("Valid number: " + num);
+    }
+}
+
+// Test cases
+isValidNumber(10);   // "Valid number: 10"
+isValidNumber(0);    // "Invalid number"
+isValidNumber(null); // "Invalid number"
+isValidNumber(undefined); // "Invalid number"
+
+
+
+
