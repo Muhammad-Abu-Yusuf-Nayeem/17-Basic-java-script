@@ -610,7 +610,7 @@ console.log(!!""); // false (Empty string is falsy)
 
 ✅ Use case: Preventing actions when an input is empty.
 */
-let user;
+
 if (!user) {
   console.log("User is not defined");
 } else {
