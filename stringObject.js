@@ -121,3 +121,96 @@ function reverseString(str) {
   return reverseString(str.slice(1)) + str[0];
 }
 console.log(reverseString("recursion")); // Output: "noisrucer"
+
+/*
+# Let's start learning JavaScript objects step by step
+Author: Abu Yusuf
+Date: 2025-03-06
+*/
+
+//************       Step 1: Understanding Objects in JavaScript       *********************************/
+//In JavaScript, an object is a collection of key-value pairs. Each key is called a property, and the value can be of any data type (string, number, boolean, function, etc.).
+
+//************        Step 2: Creating an Object      *********************************/
+//There are multiple ways to create an object in JavaScript. The most common way is using object literals {}.
+// Creating a simple object using an object literal
+let person = {
+  name: "Ali", // Property: 'name' with value 'Ali'
+  age: 25, // Property: 'age' with value 25
+  isStudent: true, // Property: 'isStudent' with value true (boolean)
+};
+
+console.log(person); // Output the whole object
+console.log(person.name); // Accessing property 'name' => Output: Ali
+console.log(person.age); // Accessing property 'age' => Output: 25
+console.log(person.isStudent); // Output: true
+
+//************       Step 3: Accessing Object Properties       *********************************/
+/**
+ * We can access object properties using:
+
+Dot notation (object.property) – Recommended and easier to read.
+Bracket notation (object["property"]) – Used when the key is dynamic or has special characters.
+ */
+console.log(person.name); // Dot notation
+console.log(person["age"]); // Bracket notation
+
+//************        Step 4: Adding & Modifying Properties      *********************************/
+//We can add new properties or modify existing ones.
+
+// Adding a new property
+person.country = "Pakistan";
+
+// Modifying an existing property
+person.age = 26;
+
+console.log(person); // The object now includes 'country' and updated 'age'
+
+//************       Step 5: Deleting a Property       *********************************/
+//We can remove a property using the delete keyword.
+delete person.isStudent;
+
+console.log(person); // 'isStudent' property is removed
+
+//************       Step 6: Object Methods (Functions inside Objects)       *********************************/
+//An object can have functions (methods) to perform actions.
+car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2022,
+  startEngine: function () {
+    console.log("Engine started!");
+  },
+};
+
+// Calling the method
+car.startEngine(); // Output: Engine started!
+
+//************       Step 7: Looping Through an Object       *********************************/
+//We can use a for...in loop to iterate over object properties.
+for (let key in person) {
+  console.log(key + ": " + person[key]); // Logs each property and its value
+}
+
+//************         Step 8: Object Inside Object (Nested Objects)     *********************************/
+//Objects can have other objects inside them.
+
+student = {
+  name: "Ahmed",
+  details: {
+    age: 20,
+    course: "JavaScript",
+    grade: "A",
+  },
+};
+
+console.log(student.details.course); // Output: JavaScript
+
+//************              *********************************/
+// Find number of keys: Object.keys(obj).length
+// Get all keys: Object.keys(obj)
+// Access nested object: object.property.subproperty
+// Common object methods:
+// Object.keys(obj), Object.values(obj), Object.entries(obj)
+// Object.assign(target, source), Object.create(prototype)
+// Object.freeze(obj), Object.seal(obj)
