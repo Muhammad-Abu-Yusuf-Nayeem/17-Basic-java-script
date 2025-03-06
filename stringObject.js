@@ -214,3 +214,131 @@ console.log(student.details.course); // Output: JavaScript
 // Object.keys(obj), Object.values(obj), Object.entries(obj)
 // Object.assign(target, source), Object.create(prototype)
 // Object.freeze(obj), Object.seal(obj)
+
+// ==========================
+// 1. Find the Number of Keys
+// ==========================
+
+// Creating an object
+let person = {
+  name: "Ali",
+  age: 25,
+  country: "Pakistan",
+};
+
+// Using Object.keys() to get an array of keys, then getting the length
+let keyCount = Object.keys(person).length;
+
+console.log("Number of keys:", keyCount);
+// Output: 3
+
+// ==========================
+// 2. Get All Keys of an Object
+// ==========================
+
+let keys = Object.keys(person);
+
+console.log("Keys in the object:", keys);
+// Output: ["name", "age", "country"]
+
+// ==========================
+// 3. Accessing a Nested Object
+// ==========================
+
+let student = {
+  name: "Ahmed",
+  details: {
+    age: 20,
+    course: "JavaScript",
+    grade: "A",
+  },
+};
+
+// Accessing nested object properties using dot notation
+console.log(student.details.course);
+// Output: JavaScript
+
+// Accessing nested object properties using bracket notation
+console.log(student["details"]["grade"]);
+// Output: A
+
+// =================================
+// 4. Built-in Methods for Objects
+// =================================
+
+// A. Get all keys of an object
+console.log(Object.keys(student));
+// Output: ["name", "details"]
+
+// B. Get all values of an object
+console.log(Object.values(student));
+// Output: ["Ahmed", {age: 20, course: "JavaScript", grade: "A"}]
+
+// C. Get both keys and values as pairs
+console.log(Object.entries(student));
+/* Output:
+[
+    ["name", "Ahmed"],
+    ["details", {age: 20, course: "JavaScript", grade: "A"}]
+]
+*/
+
+// D. Check if an object has a specific key
+console.log(student.hasOwnProperty("name"));
+// Output: true
+
+console.log(student.hasOwnProperty("address"));
+// Output: false
+
+// ===================================
+// 5. Merging Two Objects
+// ===================================
+
+let obj1 = { a: 1, b: 2 };
+let obj2 = { c: 3, d: 4 };
+
+// Merging obj1 and obj2 into a new object
+let mergedObj = Object.assign({}, obj1, obj2);
+
+console.log(mergedObj);
+// Output: { a: 1, b: 2, c: 3, d: 4 }
+
+// ===================================
+// 6. Creating an Object with a Prototype
+// ===================================
+
+// Creating a prototype object
+let car = {
+  type: "sedan",
+};
+
+// Creating a new object based on the prototype
+let myCar = Object.create(car);
+
+console.log(myCar.type);
+// Output: sedan
+
+// ===================================
+// 7. Preventing Object Modification
+// ===================================
+
+// A. Freezing an Object (Prevents any changes)
+let user = { name: "Ali" };
+
+Object.freeze(user);
+
+user.name = "Ahmed"; // Change will not happen
+console.log(user.name);
+// Output: Ali
+
+// B. Sealing an Object (Prevents adding/removing properties but allows modifications)
+let product = { name: "Laptop", price: 1000 };
+
+Object.seal(product);
+
+product.price = 1200; // Allowed
+product.brand = "HP"; // Not allowed (because it's a new property)
+delete product.name; // Not allowed
+
+console.log(product);
+// Output: { name: "Laptop", price: 1200 }
