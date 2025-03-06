@@ -21,9 +21,6 @@ console.log(str.startsWith("Hello")); // Output: true
 // 7. endsWith() - Checks if a string ends with a given substring
 console.log(str.endsWith("!")); // Output: true
 
-
-
-
 // 8. slice(start, end) - Extracts a section of a string
 let sliced = str.slice(7, 17);
 console.log(sliced); // Output: "JavaScript"
@@ -64,3 +61,38 @@ console.log("Ha".repeat(3)); // Output: "HaHaHa"
 let str1 = "Hello";
 let str2 = "World";
 console.log(str1.concat(", ", str2, "!")); // Output: "Hello, World!"
+
+// 19. match() - Finds matches using a regular expression
+let text = "The rain in Spain stays mainly in the plain.";
+let matches = text.match(/ain/g);
+console.log(matches); // Output: ["ain", "ain", "ain", "ain"]
+
+// 20. matchAll() - Returns all matches with detailed information
+let matchIterator = text.matchAll(/ain/g);
+console.log([...matchIterator]); // Output: Array of match details
+
+// 21. search() - Searches for a pattern and returns the first match index
+console.log(text.search(/Spain/)); // Output: 12
+
+// 22. replace() with regex - Replace using a regex pattern
+console.log(text.replace(/\bain\b/g, "XYZ")); // Output: "The rain in SpXYZ stays mainly in the plain."
+
+// 23. padStart() - Pads the start of a string
+console.log("5".padStart(3, "0")); // Output: "005"
+
+// 24. padEnd() - Pads the end of a string
+console.log("5".padEnd(3, "0")); // Output: "500"
+
+// 25. localeCompare() - Compares two strings lexicographically
+console.log("apple".localeCompare("banana")); // Output: -1 (apple < banana)
+
+// 26. normalize() - Normalizes Unicode characters
+let accented = "résumé";
+console.log(accented.normalize("NFD")); // Output: "résumé"
+
+// 27. Template Literals - Using backticks for multi-line strings and interpolation
+let name = "Alice";
+console.log(`Hello, ${name}!`); // Output: "Hello, Alice!"
+
+// 28. String.raw - Prevents escape sequences in template literals
+console.log(String.raw`Line1\nLine2`); // Output: "Line1\nLine2"
