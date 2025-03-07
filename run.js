@@ -37,3 +37,5 @@ if (bmi(w, a) < 18.5) {
 } else {
   console.log("you are obese");
 }
+
+

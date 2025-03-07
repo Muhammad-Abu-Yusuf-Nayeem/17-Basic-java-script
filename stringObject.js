@@ -103,7 +103,8 @@ console.log(String.raw`Line1\nLine2`); // Output: "Line1\nLine2"
 function reverseString(str) {
   return str.split("").reverse().join("");
 }
-console.log(reverseString("hello")); // Output: "olleh"
+console.log(reverseString("hello")); // Output: "ol
+// eh"
 
 // Using a for Loop (Iterative Approach)
 function reverseString(str) {
