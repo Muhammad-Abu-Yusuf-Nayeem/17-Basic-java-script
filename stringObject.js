@@ -343,3 +343,70 @@ delete product.name; // Not allowed
 
 console.log(product);
 // Output: { name: "Laptop", price: 1200 }
+
+//===========   Practice task of programming hero    ============//
+
+// Task 1: Count occurrences of 'a' in a string
+function countA(str) {
+  let count = 0;
+  for (let char of str) {
+    if (char === "a") {
+      count++;
+    }
+  }
+  return count;
+}
+
+// Task 2: Count occurrences of 'a' or 'A' in a string
+function countAorA(str) {
+  let count = 0;
+  for (let char of str) {
+    if (char === "a" || char === "A") {
+      count++;
+    }
+  }
+  return count;
+}
+
+// Task 3: Check if a string contains all vowels (a, e, i, o, u)
+function containsAllVowels(str) {
+  let vowels = ["a", "e", "i", "o", "u"];
+  str = str.toLowerCase(); // Convert to lowercase for case insensitivity
+  return vowels.every((vowel) => str.includes(vowel));
+}
+
+// Task 4: Replace 'x' with 'y' and 'X' with 'Y' in a string
+function replaceXWithY(str) {
+  return str.replace(/x/g, "y").replace(/X/g, "Y");
+}
+
+// Task 5: Capitalize the first letter of each word in a string
+function capitalizeFirstLetter(str) {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+// Task 6: Loop through an object and print key-value pairs with types
+function printObjectDetails(obj) {
+  for (let key in obj) {
+    console.log(`key: ${key} | type: ${typeof obj[key]}`);
+  }
+}
+
+// Sample Input for Task 6
+let myObject = {
+  name: "John Doe",
+  age: 25,
+  city: "Example City",
+  isStudent: true,
+};
+
+// Testing the functions
+console.log(countA("banana")); // Output: 3
+console.log(countAorA("An Apple a day")); // Output: 4
+console.log(containsAllVowels("Education")); // Output: true
+console.log(replaceXWithY("eXample and xylophone")); // Output: "eYample and yylophone"
+console.log(capitalizeFirstLetter("hello world")); // Output: "Hello World"
+printObjectDetails(myObject);

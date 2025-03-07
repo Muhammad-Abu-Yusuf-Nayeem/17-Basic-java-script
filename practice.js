@@ -31,3 +31,13 @@ console.log(person.watch());
 for(let key in person){
     console.log(key + " : " +person[key]);
 }
+
+
+let arr = [1,2,3,4,5,6,7];
+let arr2 =[];
+for(i=arr.length-1; i>=0; i--){
+    arr2.push(arr[i]);
+
+}
+
+console.log(arr2);

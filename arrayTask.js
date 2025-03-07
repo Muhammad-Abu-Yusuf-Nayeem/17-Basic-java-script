@@ -80,3 +80,52 @@ console.log("Vegetables Array:", vegetables);
 
 // Print the combined array
 console.log("Combined Array:", combinedArray);
+
+// Task 1: Reverse an array without using reverse()
+function reverseArray(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  while (left < right) {
+    [arr[left], arr[right]] = [arr[right], arr[left]];
+    left++;
+    right--;
+  }
+  return arr;
+}
+
+const colors = ["red", "blue", "green", "yellow", "orange"];
+console.log(reverseArray(colors)); // Output: ['orange', 'yellow', 'green', 'blue', 'red']
+
+// Task 2: Get even numbers from an array
+function getEvenNumbers(arr) {
+  let evenNumbers = [];
+  for (let num of arr) {
+    if (num % 2 === 0) {
+      evenNumbers.push(num);
+    }
+  }
+  return evenNumbers;
+}
+
+const numbers = [12, 98, 5, 41, 23, 78, 46];
+console.log(getEvenNumbers(numbers)); // Output: [12, 98, 78, 46]
+
+// Task 3: Concatenate all elements of an array into a single string
+function concatenateArray(arr) {
+  let result = "";
+  for (let element of arr) {
+    result += element;
+  }
+  return result;
+}
+
+var names = ["Tom", "Tim", "Tin", "Tik"];
+console.log(concatenateArray(names)); // Output: 'TomTimTinTik'
+
+// Task 4: Reverse the words in a sentence
+function reverseWords(sentence) {
+  return sentence.split(" ").reverse().join(" ");
+}
+
+const statement = "I am a hard working person";
+console.log(reverseWords(statement)); // Output: 'person working hard a am I'
