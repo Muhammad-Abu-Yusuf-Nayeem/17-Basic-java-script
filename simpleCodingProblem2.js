@@ -131,7 +131,7 @@ const calculateTotalPro = (shoppingList) =>
 // Call function and display result
 console.log("Total Price (Pro):", calculateTotalPro(shoppingList));
 
-//the multi-layer discount system structured into Beginner, Intermediate, and Pro sections with proper comments.
+//🟢 🟢 🟢 🟢 🟢 the multi-layer discount system structured into Beginner, Intermediate, and Pro sections with proper comments.
 
 // 🟢 🟢 🟢 🟢 🟢 Beginner Level
 // Using if-else conditions to apply multi-layer discount
@@ -215,3 +215,149 @@ let resultPro = applyDiscountPro(totalPricePro);
 
 console.log("\n🔴 Pro Level:");
 console.log(resultPro);
+
+// 🔴 🔴 🔴 🔴  write a function calculator then call other function to operation
+// Define the operation functions
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    return "Cannot divide by zero";
+  }
+  return a / b;
+}
+
+// Define the calculator function
+function calculator(a, b, operation) {
+  return operation(a, b);
+}
+
+// Example usage
+console.log(calculator(5, 8, add)); // Output: 13
+console.log(calculator(10, 3, subtract)); // Output: 7
+console.log(calculator(4, 6, multiply)); // Output: 24
+console.log(calculator(20, 4, divide)); // Output: 5
+
+//// 🔴 🔴 🔴 🔴  Function to Check Type and Sum:
+
+function sumOfNumbers(...args) {
+  // Check if all arguments are numbers
+  for (let i = 0; i < args.length; i++) {
+    if (typeof args[i] !== "number") {
+      return `Error: Argument at index ${i} is not a number.`;
+    }
+  }
+
+  // Calculate the sum if all arguments are numbers
+  let sum = args.reduce((acc, num) => acc + num, 0);
+  return sum;
+}
+
+// Test the function with numbers
+console.log(sumOfNumbers(5, 10, 15)); // Output: 30
+
+// Test the function with a non-number argument
+console.log(sumOfNumbers(5, "10", 15)); // Output: Error: Argument at index 1 is not a number.
+
+// 🟡 🟡 🟡 🟡      Task-1: Find the lowest number in the array
+
+const heights2 = [167, 190, 120, 165, 137];
+
+// Find the lowest number
+const lowestHeight = Math.min(...heights2);
+
+console.log("The lowest number is:", lowestHeight);
+
+/**
+ * Math.min(...array): This function finds the smallest value in an array. The spread operator (...) is used to pass the elements of the array as individual arguments to the Math.min() function.
+ */
+
+// 🟡 🟡 🟡 🟡         Task-2: Find the friend with the smallest name
+const friends = ["rahim", "robin", "rafi", "ron", "rashed"];
+
+// Sort the array alphabetically and get the first name (smallest)
+const smallestName = friends.sort()[0];
+
+console.log("The friend with the smallest name is:", smallestName);
+
+// 🟡 🟡 🟡 🟡         Task-3: Calculate the total budget required to buy electronics
+function calculateElectronicsBudget(laptops, tablets, mobiles) {
+  const laptopPrice = 35000;
+  const tabletPrice = 15000;
+  const mobilePrice = 20000;
+
+  // Calculate the total budget
+  const totalBudget =
+    laptops * laptopPrice + tablets * tabletPrice + mobiles * mobilePrice;
+
+  return totalBudget;
+}
+
+// Example usage
+const totalBudget = calculateElectronicsBudget(2, 3, 1);
+console.log("Total budget required:", totalBudget, "tk");
+
+// 🟡 🟡 🟡 🟡        Task-4: Find the average phone price
+const phones = [
+  { model: "PhoneA", brand: "Iphone", price: 95000 },
+  { model: "PhoneB", brand: "Samsung", price: 40000 },
+  { model: "PhoneC", brand: "Oppo", price: 26000 },
+  { model: "PhoneD", brand: "Nokia", price: 35000 },
+  { model: "PhoneE", brand: "Iphone", price: 105000 },
+  { model: "PhoneF", brand: "HTC", price: 48000 },
+];
+
+function findAveragePhonePrice(phoneArray) {
+  let totalPrice = 0;
+
+  // Sum all phone prices
+  for (let i = 0; i < phoneArray.length; i++) {
+    totalPrice += phoneArray[i].price;
+  }
+
+  // Calculate the average price
+  const averagePrice = totalPrice / phoneArray.length;
+  return averagePrice;
+}
+
+// Example usage
+const averagePrice = findAveragePhonePrice(phones);
+console.log("The average phone price is:", averagePrice);
+
+// 🟡 🟡 🟡 🟡         Task-5: Calculate the total monthly salary of all employees
+const employees = [
+  { name: "shahin", experience: 5, starting: 20000, increment: 5000 },
+  { name: "shihab", experience: 3, starting: 15000, increment: 7000 },
+  { name: "shikot", experience: 9, starting: 30000, increment: 1000 },
+  { name: "shohel", experience: 0, starting: 29000, increment: 4000 },
+];
+
+function calculateTotalSalary(employees) {
+  let totalSalary = 0;
+
+  // Loop through each employee and calculate their salary
+  for (let i = 0; i < employees.length; i++) {
+    const employee = employees[i];
+    const salary = employee.starting + employee.experience * employee.increment;
+    totalSalary += salary;
+  }
+
+  return totalSalary;
+}
+
+// Example usage
+const totalSalary = calculateTotalSalary(employees);
+console.log(
+  "The total monthly salary the company needs to pay is:",
+  totalSalary
+);
