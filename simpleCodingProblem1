@@ -1,0 +1,81 @@
+// ✅✅✅ 22-2: Unit Conversion (Inch to Feet, Miles to Kilometers) ✅✅✅
+function inchToFeet(inch) {
+  return inch / 12;
+}
+
+function milesToKilometers(miles) {
+  return miles * 1.60934;
+}
+
+// Test Cases
+console.log("5 inches in feet:", inchToFeet(5)); // Output: 0.4167 feet
+console.log("10 miles in km:", milesToKilometers(10)); // Output: 16.0934 km
+
+// ✅✅✅ 22-3: Check Leap Year ✅✅✅
+function isLeapYear(year) {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+// Test Cases
+console.log("2024 is leap year?", isLeapYear(2024)); // Output: true
+console.log("2023 is leap year?", isLeapYear(2023)); // Output: false
+
+// ✅✅✅ 22-4: Average of Odd Numbers in an Array ✅✅✅
+function averageOfOddNumbers(arr) {
+  let oddNumbers = arr.filter((num) => num % 2 !== 0);
+  let sum = oddNumbers.reduce((acc, num) => acc + num, 0);
+  return oddNumbers.length > 0 ? sum / oddNumbers.length : 0;
+}
+
+// Test Cases
+console.log("Average of odd numbers:", averageOfOddNumbers([1, 2, 3, 4, 5])); // Output: 3
+console.log("Average of odd numbers:", averageOfOddNumbers([10, 12, 14])); // Output: 0
+
+// ✅✅✅ 22-5: Remove Duplicate Items from an Array ✅✅✅
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+// Test Cases
+console.log("Unique numbers:", removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1,2,3,4,5]
+
+// ✅✅✅ 22-6: Math Functions (abs, round, ceil, floor, random) ✅✅✅
+console.log("Math.abs(-7):", Math.abs(-7)); // Output: 7
+console.log("Math.round(4.6):", Math.round(4.6)); // Output: 5
+console.log("Math.ceil(4.3):", Math.ceil(4.3)); // Output: 5
+console.log("Math.floor(4.9):", Math.floor(4.9)); // Output: 4
+console.log("Random number (0 to 100):", Math.floor(Math.random() * 101)); // Output: Random number
+
+// ✅✅✅ 22-7: JavaScript Date & Time ✅✅✅
+let now = new Date();
+console.log("Current Date & Time:", now);
+console.log("Year:", now.getFullYear());
+console.log("Month:", now.getMonth() + 1); // Months start from 0
+console.log("Day:", now.getDate());
+console.log("Hours:", now.getHours());
+console.log("Minutes:", now.getMinutes());
+console.log("Seconds:", now.getSeconds());
+
+// ✅✅✅ 22-8: Variable Swapping ✅✅✅
+let a = 5,
+  b = 10;
+console.log("Before Swap: a =", a, "b =", b);
+
+// Method 1: Using Temporary Variable
+let temp = a;
+a = b;
+b = temp;
+console.log("After Swap (Using temp): a =", a, "b =", b);
+
+// Method 2: Without Temporary Variable
+[a, b] = [b, a];
+console.log("After Swap (Without temp): a =", a, "b =", b);
+
+// ✅✅✅ 22-9: Module Summary ✅✅✅
+// ✅ Unit conversion functions (inch to feet, miles to km)
+// ✅ Leap year checker function
+// ✅ Finding the average of odd numbers
+// ✅ Removing duplicate elements from an array
+// ✅ Math functions (abs, round, ceil, floor, random)
+// ✅ JavaScript Date & Time functions
+// ✅ Variable swapping (With and Without temp)
