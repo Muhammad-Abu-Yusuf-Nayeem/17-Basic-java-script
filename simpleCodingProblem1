@@ -79,3 +79,94 @@ console.log("After Swap (Without temp): a =", a, "b =", b);
 // ✅ Math functions (abs, round, ceil, floor, random)
 // ✅ JavaScript Date & Time functions
 // ✅ Variable swapping (With and Without temp)
+
+// 🟢 🟢 🟢 🟢    Beginner Level
+// 🟢 🟢 🟢 🟢    These solutions are simple and straightforward, using basic JavaScript concepts.
+
+// Task 1: Convert Celsius to Fahrenheit
+function celsiusToFahrenheit(celsius) {
+  return (celsius * 9) / 5 + 32;
+}
+
+// Task 2: Count occurrences of a number in an array
+function countOccurrences(numbers, find) {
+  let count = 0;
+  for (let num of numbers) {
+    if (num === find) {
+      count++;
+    }
+  }
+  return count;
+}
+
+// Task 3: Count the number of vowels in a string
+function countVowels(str) {
+  let vowels = "aeiouAEIOU";
+  let count = 0;
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+// Task 4: Find the longest word in a string
+function longestWord(sentence) {
+  let words = sentence.split(" ");
+  let longest = "";
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
+    }
+  }
+  return longest;
+}
+
+// Task 5: Generate a random number between 10 and 20
+function randomBetween10And20() {
+  return Math.floor(Math.random() * 11) + 10;
+}
+// 🟡 🟡 🟡 🟡 🟡 Intermediate Level
+//Here, we use higher-order functions and more efficient techniques.
+
+// Task 1: Convert Celsius to Fahrenheit using arrow function
+const celsiusToFahrenheit = (celsius) => (celsius * 9) / 5 + 32;
+
+// Task 2: Count occurrences using filter
+const countOccurrences = (numbers, find) =>
+  numbers.filter((num) => num === find).length;
+
+// Task 3: Count vowels using regex
+const countVowels = (str) => (str.match(/[aeiou]/gi) || []).length;
+
+// Task 4: Find longest word using reduce
+const longestWord = (sentence) =>
+  sentence.split(" ").reduce((a, b) => (a.length >= b.length ? a : b), "");
+
+// Task 5: Generate a random number between 10 and 20
+const randomBetween10And20 = () => Math.floor(Math.random() * 11) + 10;
+
+// 🔴 🔴 🔴 🔴 🔴 🔴 🔴 Pro Level
+//These solutions are more advanced, using functional programming, ES6 methods, and concise code.
+
+// Task 1: Convert Celsius to Fahrenheit (Shortest one-liner)
+const celsiusToFahrenheit = (c) => (c * 9) / 5 + 32;
+
+// Task 2: Count occurrences using reduce
+const countOccurrences = (numbers, find) =>
+  numbers.reduce((count, num) => count + (num === find ? 1 : 0), 0);
+
+// Task 3: Count vowels using a functional approach
+const countVowels = (str) =>
+  [...str].reduce(
+    (count, char) => ("aeiouAEIOU".includes(char) ? count + 1 : count),
+    0
+  );
+
+// Task 4: Find longest word using sort
+const longestWord = (sentence) =>
+  sentence.split(" ").sort((a, b) => b.length - a.length)[0];
+
+// Task 5: Generate a random number between 10 and 20 using Math.random
+const randomBetween10And20 = () => (10 + Math.random() * 10) | 0;
